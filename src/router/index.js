@@ -5,6 +5,7 @@ import Quotes from '@/components/quote/MainQuote'
 import Form from '@/components/forms/MainForm'
 import Directives from '@/components/directives/MainDirectives'
 import Filters from '@/components/filters/Filters'
+import Animations from '@/components/animations/MainAnimations'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/filters',
       name: 'filters',
       component: Filters
+    },
+    {
+      path: '/animations',
+      name: 'animations',
+      component: Animations
     }
   ]
 })
