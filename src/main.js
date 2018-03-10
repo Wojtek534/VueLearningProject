@@ -7,10 +7,15 @@ import status from './components/status/ServerStatus.vue'
 import './setWindow'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'animate.css'
+import Vuetify from 'vuetify'
+import VueResource from 'vue-resource'
 
 export const eventStore = new Vue()
-
 Vue.config.productionTip = false
+Vue.use(Vuetify)
+Vue.use(VueResource)
+Vue.http.options.root = 'https://vue-http-c1b43.firebaseio.com/'
 
 Vue.directive('highlight', {
   bind (el, binding, vnode) {

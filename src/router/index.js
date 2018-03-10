@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Sample from '@/components/status/Home'
+import Home from '@/components/Home'
+import Sample from '@/components/status/MainStatus'
 import Quotes from '@/components/quote/MainQuote'
 import Form from '@/components/forms/MainForm'
 import Directives from '@/components/directives/MainDirectives'
 import Filters from '@/components/filters/Filters'
 import Animations from '@/components/animations/MainAnimations'
+import Rest from '@/components/http/RestVueResources'
 
 Vue.use(Router)
 
@@ -14,6 +16,11 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      component: Home
+    },
+    {
+      path: '/Sample',
+      name: 'Sample',
       component: Sample
     },
     {
@@ -40,6 +47,11 @@ export default new Router({
       path: '/animations',
       name: 'animations',
       component: Animations
+    },
+    {
+      path: '/rest',
+      name: '/rest',
+      component: Rest
     }
   ]
 })
