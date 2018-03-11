@@ -37,3 +37,7 @@ new Vue({
   },
   render: x => x(App)
 })
+router.beforeEach((to, from, next) => {
+  console.log(from)
+  next(true)
+})

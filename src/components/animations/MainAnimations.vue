@@ -2,10 +2,10 @@
   <app-transition/>
 </template>
 <script>
-import Transition from './Transition'
+import Transition from "./Transition";
 export default {
-  components:{
-    'appTransition': Transition
+  components: {
+    appTransition: Transition
   }
-}
+};
 </script>

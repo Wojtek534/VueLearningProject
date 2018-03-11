@@ -7,20 +7,20 @@
 </template>
 
 <script>
-  import status from "./Status";
-  export default {
-    data() {
-      return {
-        customStatus: "default"
-      };
-    },
-    components: {
-      "app-comp-status": status
-    },
-    methods: {
-      changeStatus() {
-        this.customStatus = "Denied";
-      }
+import status from "./Status";
+export default {
+  data() {
+    return {
+      customStatus: "default"
+    };
+  },
+  components: {
+    "app-comp-status": status
+  },
+  methods: {
+    changeStatus() {
+      this.customStatus = "Denied";
     }
-  };
+  }
+};
 </script>

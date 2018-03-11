@@ -6,23 +6,23 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      defaultStatus: {
-        type: String,
-        required: true
-      }
-    },
-    methods: {
-      reset() {
-        this.$emit('myEvent', 'EventValue')
-      }
+export default {
+  props: {
+    defaultStatus: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    reset() {
+      this.$emit("myEvent", "EventValue");
     }
   }
+};
 </script>
 
 <style scoped>
-  button {
-    border: 2px;
-  }
+button {
+  border: 2px;
+}
 </style>

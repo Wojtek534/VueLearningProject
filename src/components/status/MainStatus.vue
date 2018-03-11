@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <button class="btn btn-primary" @click="NavigateHome">Go Home</button>
     <h1>{{ msg }}</h1>
     <app-status/>
     <app-quote :quote='msg'>
@@ -10,42 +11,47 @@
 </template>
 
 <script>
-  import QuoteComponent from "./Quote";
-  export default {
-    name: "Home",
-    data() {
-      return {
-        msg: "Vue JS Home page"
-      };
-    },
-    components: {
-      appQuote: QuoteComponent
+import QuoteComponent from "./Quote";
+export default {
+  name: "Home",
+  data() {
+    return {
+      msg: "Vue JS Home page"
+    };
+  },
+  methods: {
+    NavigateHome() {
+      this.$router.push("/");
     }
-  };
+  },
+  components: {
+    appQuote: QuoteComponent
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1,
-  h2 {
-    font-weight: normal;
-  }
+h1,
+h2 {
+  font-weight: normal;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-  a {
-    color: #42b983;
-  }
+a {
+  color: #42b983;
+}
 
-  .home {
-    background-color: lightblue;
-  }
+.home {
+  background-color: lightblue;
+}
 </style>

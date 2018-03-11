@@ -1,64 +1,75 @@
 <template>
-<div class="col-sm-6 col-xs-12 col-md-4 mx-auto">
-  <p>Restfull api requests</p>
-  <hr>
-  <div class="form-group">
-    <label>Username</label>
-    <input class="form-control" type="text" v-model="newUser.Username">
-  </div>
+  <div class="col-sm-6 col-xs-12 col-md-4 mx-auto">
+    Loaded Id: {{id}}
+    <p>Restfull api requests</p>
+    <hr>
     <div class="form-group">
-    <label>Email</label>
-    <input class="form-control" type="text" v-model="newUser.Email">
-  </div>
-  <button class="btn btn-primary btn-md" @click="submit">Submit</button>
-  <hr>
-  <button class="btn btn-primary btn-md" @click="fetchData">Get Data</button>
-  <app-table :users="users"/>
+      <label>Username</label>
+      <input class="form-control" type="text" v-model="newUser.Username">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" type="text" v-model="newUser.Email">
+    </div>
+    <button class="btn btn-primary btn-md" @click="submit">Submit</button>
+    <hr>
+    <button class="btn btn-primary btn-md" @click="fetchData">Get Data</button>
+    <app-table :users="users" />
   </div>
 </template>
 <script>
-import Table from './Table'
+import Table from "./Table";
 export default {
   data() {
-    return{
+    return {
       newUser: {
-        Username: '',
-        Email: ''
+        Username: "",
+        Email: ""
       },
-      users: []
+      users: [],
+      id: this.$route.params.id
+    };
+  },
+  watch:{
+    '$route' (to, from){
+      this.id = to.params.id
+
     }
   },
   components: {
     appTable: Table
   },
-  methods:{
-    submit(){
-     this.$http.post('data.json', this.newUser)
-     .then(response =>{
-       console.log(response)
-     }, error => {
-       console.log(error)
-     })
-    },
-    fetchData(){
-      this.$http.get('data.json')
-      .then(response =>{
-        return response.json()
-      },
-       error => {
-        console.log(error)
-      })
-      .then(data =>{
-        console.log(data)
-        const array = []
-        for (let key in data){
-          array.push(data[key])
+  methods: {
+    submit() {
+      this.$http.post("data.json", this.newUser).then(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
         }
-        this.users = array
-
-      })
+      );
+    },
+    fetchData() {
+      this.$http
+        .get("data.json")
+        .then(
+          response => {
+            return response.json();
+          },
+          error => {
+            console.log(error);
+          }
+        )
+        .then(data => {
+          console.log(data);
+          const array = [];
+          for (let key in data) {
+            array.push(data[key]);
+          }
+          this.users = array;
+        });
+    }
   }
-  }
-
-}
+};
 </script>
