@@ -19,6 +19,10 @@ export default {
     return {
       Header: [
         {
+          Name: 'Vuex',
+          Link: 'Vuex'
+        },
+        {
           Name: "User",
           Link: "User"
         },

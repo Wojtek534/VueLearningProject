@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import status from './components/status/ServerStatus.vue'
+import {store} from './store/store'
 import './setWindow'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -32,6 +33,7 @@ Vue.component('app-status', status)
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },

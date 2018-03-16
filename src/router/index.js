@@ -8,6 +8,7 @@ import Filters from '@/components/filters/Filters'
 import Animations from '@/components/animations/MainAnimations'
 import Rest from '@/components/http/RestVueResources'
 import NotFound from '@/components/NotFound'
+import Vuex from '@/components/vuex/vuexSample'
 
 // Webpack routes optimize - use only if needed
 const Sample = resolve => {
@@ -101,8 +102,12 @@ export default new Router({
       component: Animations
     }, {
       path: '/rest',
-      name: '/rest',
+      name: 'rest',
       component: Rest
+    }, {
+      path: '/vuex',
+      name: 'vuex',
+      component: Vuex
     }
   ]
 })
